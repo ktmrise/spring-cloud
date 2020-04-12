@@ -1,4 +1,4 @@
-package com.ktm.springcloud.entity;
+package com.ktm.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

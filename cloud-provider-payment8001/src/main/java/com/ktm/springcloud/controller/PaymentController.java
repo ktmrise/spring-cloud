@@ -1,6 +1,6 @@
 package com.ktm.springcloud.controller;
 
-import com.ktm.springcloud.entity.CommonResult;
+import com.ktm.entity.CommonResult;
 import com.ktm.springcloud.entity.Payment;
 import com.ktm.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
