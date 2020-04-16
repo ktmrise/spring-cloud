@@ -3,6 +3,7 @@ package com.ktm.springcloud.controller;
 import com.ktm.springcloud.entity.CommonResult;
 import com.ktm.springcloud.entity.Payment;
 import com.ktm.springcloud.service.PaymentService;
+import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+
+
 
 
     @PostMapping({"/","/payment/create"})
