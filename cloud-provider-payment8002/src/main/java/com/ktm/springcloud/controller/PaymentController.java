@@ -6,6 +6,8 @@ import com.ktm.springcloud.service.PaymentService;
 import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -54,5 +56,11 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "没有对应记录，查询ID：" + id, null);
         }
+    }
+
+
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
     }
 }
