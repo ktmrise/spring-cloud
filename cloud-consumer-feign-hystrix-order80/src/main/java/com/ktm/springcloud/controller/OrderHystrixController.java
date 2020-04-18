@@ -1,4 +1,4 @@
-package com.ktm.springcloud;
+package com.ktm.springcloud.controller;
 
 import com.ktm.springcloud.service.PaymentHystrixService;
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;

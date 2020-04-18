@@ -1,17 +1,16 @@
-package com.ktm.springcloud;
+package com.ktm.springcloud.controller;
 
 import com.ktm.springcloud.entity.CommonResult;
 import com.ktm.springcloud.entity.Payment;
 import com.ktm.springcloud.service.PaymentService;
+import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -30,21 +29,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @Resource
-    private DiscoveryClient discoveryClient;
 
-    @GetMapping(value = "/payment/discovery")
-    public Object discovery(){
-        List<String> services = discoveryClient.getServices();  //得到所有的微服务
-        for (String element : services) {
-            log.info("*****element:"+element);
-        }
-        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PROVIDER-SERVICE"); //得到一个具体微服务的所有实例
-        for (ServiceInstance instance : instances){
-            log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
-        }
-        return this.discoveryClient;
-    }
 
 
 
@@ -71,18 +56,6 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "没有对应记录，查询ID：" + id, null);
         }
-    }
-
-
-    @GetMapping(value = "/payment/feign/timeout")
-    public String paymentFeignTimeout(){
-        //暂停几秒钟线程
-        try{
-            TimeUnit.SECONDS.sleep(3);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-        return serverPort;
     }
 
 

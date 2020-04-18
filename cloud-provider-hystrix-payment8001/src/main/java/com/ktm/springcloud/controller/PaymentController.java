@@ -1,4 +1,4 @@
-package com.ktm.springcloud;
+package com.ktm.springcloud.controller;
 
 import com.ktm.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.ktm.springcloud;
+package com.ktm.springcloud.controller;
 
 import com.ktm.springcloud.entity.CommonResult;
 import com.ktm.springcloud.entity.Payment;

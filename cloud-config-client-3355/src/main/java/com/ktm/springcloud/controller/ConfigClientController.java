@@ -1,4 +1,4 @@
-package com.ktm.springcloud;
+package com.ktm.springcloud.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @description:
  * @Author: rise
- * @create: 2020-04-18 13:57
+ * @create: 2020-04-18 11:51
  **/
 
 
