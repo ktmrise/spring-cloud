@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "eureka.rabbitmq.host",
+      "type": "java.lang.String",
+      "description": "Description for eureka.rabbitmq.host."
+    },
+    {
+      "name": "eureka.rabbitmq.port",
+      "type": "java.lang.String",
+      "description": "Description for eureka.rabbitmq.port."
+    },
+    {
+      "name": "eureka.rabbitmq.username",
+      "type": "java.lang.String",
+      "description": "Description for eureka.rabbitmq.username."
+    }
+  ] }
